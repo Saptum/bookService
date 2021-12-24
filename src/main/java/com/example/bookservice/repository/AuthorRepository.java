@@ -1,4 +1,6 @@
 package com.example.bookservice.repository;
 
-public interface AuthorRepository {
+import com.example.bookservice.model.Author;
+
+public interface AuthorRepository  {
 }
