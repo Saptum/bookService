@@ -36,7 +36,7 @@ public class RewardController {
     }
 
     @GetMapping("/rewardByName/{name}")
-    public List<Reward> getRewardByName(@PathVariable String  name) {
+    public List<Reward> getRewardByName(@PathVariable String name) {
         return rewardService.getRewardsByName(name);
     }
 

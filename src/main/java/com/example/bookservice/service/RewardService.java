@@ -5,9 +5,11 @@ import com.example.bookservice.model.Reward;
 import com.example.bookservice.repository.AuthorRepository;
 import com.example.bookservice.repository.RewardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class RewardService {
 
     @Autowired
