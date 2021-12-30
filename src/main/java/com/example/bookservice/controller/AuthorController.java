@@ -5,6 +5,7 @@ import com.example.bookservice.model.Book;
 import com.example.bookservice.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,12 +23,15 @@ public class AuthorController {
         return authorService.saveAuthor(author);
     }
 
-public Author addBook(@PathVariable Long id,@RequestBody Book book){
+    @PostMapping("/addBook/{id}")
+    public Author addBook(@PathVariable Long id, @RequestBody Book book) {
         return authorService.addBook(book, id);
-}
+    }
 
-
-
+    @GetMapping("/authors")
+    public List<Author> getAuthors() {
+        return authorService.findAll();
+    }
 
 
 }
