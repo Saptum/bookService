@@ -17,7 +17,7 @@ import java.util.Set;
 public class Publisher {
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
     private String name;
     private String country;
     private String city;

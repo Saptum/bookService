@@ -18,7 +18,7 @@ import java.util.Set;
 public class Author {
     @Id
     @GeneratedValue
-    private int authorId;
+    private Long authorId;
     private String firstName;
     private String lastName;
     private String country;

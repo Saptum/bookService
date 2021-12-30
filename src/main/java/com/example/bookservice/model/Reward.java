@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Reward {
     @Id
     @GeneratedValue
-    private int id;
+    private Long id;
     private String name;
     private String description;
     @ManyToOne(cascade = CascadeType.ALL)
