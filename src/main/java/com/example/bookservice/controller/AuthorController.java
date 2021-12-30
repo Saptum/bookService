@@ -20,6 +20,11 @@ public class AuthorController {
     public Author saveAuthor(@RequestBody Author author) {
         return authorService.saveAuthor(author);
     }
+    
+    @PostMapping("/saveAuthors")
+    public List<Author> saveAuthor(@RequestBody List<Author> authors){
+        return authorService.saveAuthor(authors);
+    }
 
     @PostMapping("/addBook/{id}")
     public Author addBook(@PathVariable Long id, @RequestBody Book book) {
@@ -70,5 +75,4 @@ public class AuthorController {
     public String deleteAuthor(@PathVariable Long id) {
         return authorService.deleteAuthor(id);
     }
-
 }

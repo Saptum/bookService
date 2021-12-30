@@ -15,38 +15,33 @@ public class AuthorService {
     @Autowired
     private AuthorRepository authorRepository;
 
-    public Author findById(Long id){
+    public Author findById(Long id) {
         return authorRepository.findById(id).orElse(null);
     }
 
-    public List<Author> findAll(){
+    public List<Author> findAll() {
         return authorRepository.findAll();
     }
 
-    public Author saveAuthor (Author author){
+    public Author saveAuthor(Author author) {
         return authorRepository.save(author);
     }
 
-    public void deleteById(Long id){
-        authorRepository.deleteById(id);
-    }
-
-    public  List<Author> saveAuthor (List<Author> authors){
+    public List<Author> saveAuthor(List<Author> authors) {
         return authorRepository.saveAll(authors);
     }
 
-    public Author addBook(Book book,Long authorId ){
+    public Author addBook(Book book, Long authorId) {
         Author author = authorRepository.getById(authorId);
         author.getBooks().add(book);
         return authorRepository.save(author);
-
     }
 
     public List<Author> getAuthorsByFirstName(String firstName) {
         return authorRepository.findAllByFirstName(firstName);
     }
 
-    public List<Author>  getAuthorsByLastName(String lastName) {
+    public List<Author> getAuthorsByLastName(String lastName) {
         return authorRepository.findAllByLastName(lastName);
     }
 
