@@ -3,12 +3,12 @@ package com.example.bookservice.controller;
 import com.example.bookservice.model.Publisher;
 import com.example.bookservice.service.PublisherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class PublisherController {
     @Autowired
     private PublisherService publisherService;

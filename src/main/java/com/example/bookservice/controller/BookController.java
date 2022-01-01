@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
-@Controller
+@RestController
 public class BookController {
 
     @Autowired
