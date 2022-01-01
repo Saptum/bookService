@@ -60,7 +60,7 @@ public class BookService {
 
     public String deleteBook(Long id) {
         bookRepository.deleteById(id);
-        return "Book #" + id + " was deleted!";
+        return "Book " + id + " was deleted!";
     }
 
     public Book addBookToAuthor(Long author_id, Long book_id) {

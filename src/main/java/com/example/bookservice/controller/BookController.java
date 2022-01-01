@@ -3,7 +3,6 @@ package com.example.bookservice.controller;
 import com.example.bookservice.model.Book;
 import com.example.bookservice.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;

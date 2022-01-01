@@ -49,7 +49,7 @@ public class RewardService {
 
     public String deleteReward(Long id) {
        rewardRepository.deleteById(id);
-        return "Reward #" + id + " was deleted!";
+        return "Reward " + id + " was deleted!";
     }
 
     public Reward addRewardToAuthor(Long author_id, Long reward_id) {

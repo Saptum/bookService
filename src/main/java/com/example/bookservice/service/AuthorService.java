@@ -69,7 +69,7 @@ public class AuthorService {
 
     public String deleteAuthor(Long id) {
         authorRepository.deleteById(id);
-        return "Author #" + id + " was deleted!";
+        return "Author " + id + " was deleted!";
     }
 
 }

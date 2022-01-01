@@ -56,7 +56,7 @@ public class PublisherService {
 
     public String deletePublisher(Long id) {
         publisherRepository.deleteById(id);
-        return "Publisher #" + id + " was deleted!";
+        return "Publisher " + id + " was deleted!";
     }
 
 }
