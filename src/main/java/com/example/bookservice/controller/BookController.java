@@ -2,7 +2,6 @@ package com.example.bookservice.controller;
 
 import com.example.bookservice.model.Book;
 import com.example.bookservice.service.BookService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -11,8 +10,12 @@ import java.util.List;
 @RestController
 public class BookController {
 
-    @Autowired
-    private BookService bookService;
+
+    private final BookService bookService;
+
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
 
     @PostMapping("/saveBook")
     public Book saveBook(@RequestBody Book book) {

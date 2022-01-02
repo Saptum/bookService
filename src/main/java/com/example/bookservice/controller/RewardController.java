@@ -3,7 +3,6 @@ package com.example.bookservice.controller;
 import com.example.bookservice.model.Reward;
 
 import com.example.bookservice.service.RewardService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,8 +10,11 @@ import java.util.List;
 @RestController
 public class RewardController {
 
-    @Autowired
-    private RewardService rewardService;
+    private final RewardService rewardService;
+
+    public RewardController(RewardService rewardService) {
+        this.rewardService = rewardService;
+    }
 
     @PostMapping("/saveReward")
     public Reward saveReward(@RequestBody Reward reward) {

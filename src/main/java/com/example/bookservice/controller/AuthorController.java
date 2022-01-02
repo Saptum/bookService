@@ -3,8 +3,6 @@ package com.example.bookservice.controller;
 import com.example.bookservice.model.Author;
 import com.example.bookservice.model.Book;
 import com.example.bookservice.service.AuthorService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -13,8 +11,11 @@ import java.util.List;
 @RestController
 public class AuthorController {
 
-    @Autowired
-    private AuthorService authorService;
+    private final AuthorService authorService;
+
+    public AuthorController(AuthorService authorService) {
+        this.authorService = authorService;
+    }
 
     @PostMapping("/saveAuthor")
     public Author saveAuthor(@RequestBody Author author) {
