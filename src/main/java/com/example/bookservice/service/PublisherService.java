@@ -2,15 +2,18 @@ package com.example.bookservice.service;
 
 import com.example.bookservice.model.Publisher;
 import com.example.bookservice.repository.PublisherRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class PublisherService {
-    @Autowired
-    private PublisherRepository publisherRepository;
+
+    private final PublisherRepository publisherRepository;
+
+    public PublisherService(PublisherRepository publisherRepository) {
+        this.publisherRepository = publisherRepository;
+    }
 
     public Publisher savePubliser(Publisher publisher) {
         return publisherRepository.save(publisher);

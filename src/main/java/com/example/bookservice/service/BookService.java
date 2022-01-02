@@ -6,7 +6,6 @@ import com.example.bookservice.model.Publisher;
 import com.example.bookservice.repository.AuthorRepository;
 import com.example.bookservice.repository.BookRepository;
 import com.example.bookservice.repository.PublisherRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -14,12 +13,16 @@ import java.util.List;
 
 @Service
 public class BookService {
-    @Autowired
-    private BookRepository bookRepository;
-    @Autowired
-    private AuthorRepository authorRepository;
-    @Autowired
-    private PublisherRepository publisherRepository;
+
+    private final BookRepository bookRepository;
+    private final AuthorRepository authorRepository;
+    private final PublisherRepository publisherRepository;
+
+    public BookService(BookRepository bookRepository, AuthorRepository authorRepository, PublisherRepository publisherRepository) {
+        this.bookRepository = bookRepository;
+        this.authorRepository = authorRepository;
+        this.publisherRepository = publisherRepository;
+    }
 
     public Book saveBook(Book book) {
         return bookRepository.save(book);
