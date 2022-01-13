@@ -4,7 +4,7 @@ import com.example.bookservice.model.Author;
 import com.example.bookservice.model.Book;
 import com.example.bookservice.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -49,6 +49,11 @@ public class AuthorController {
     @GetMapping("/authorByLastName/{lastName}")
     public List<Author> getAuthorsByLastName(@PathVariable String lastName) {
         return authorService.getAuthorsByLastName(lastName);
+    }
+
+    @GetMapping("/authorsByFirstNameAndLastName/{firstName}/{lastName}")
+    public List<Author> getAuthorsByFirstNameAndLastName(@PathVariable String firstName, String lastName){
+        return authorService.getAuthorsByFirstNameAndLastName(firstName,lastName);
     }
 
     @GetMapping("/authorByCountry/{country}")

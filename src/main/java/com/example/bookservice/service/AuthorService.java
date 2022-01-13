@@ -45,6 +45,10 @@ public class AuthorService {
         return authorRepository.findAllByLastName(lastName);
     }
 
+    public List<Author> getAuthorsByFirstNameAndLastName(String firstName, String lastName){
+        return authorRepository.findByFirstNameAndLastName(firstName,lastName);
+    }
+
     public List<Author> getAuthorsByCountry(String country) {
         return authorRepository.findAllByCountry(country);
     }
