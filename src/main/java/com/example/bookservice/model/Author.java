@@ -23,6 +23,7 @@ public class Author {
     private String lastName;
     private String country;
     private String sex;
+    private String email;
     private Date date;
 
     @JsonIgnore
