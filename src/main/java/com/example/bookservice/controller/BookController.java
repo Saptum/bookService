@@ -69,5 +69,8 @@ public class BookController {
         return bookService.deleteBook(id);
     }
 
-
+    @GetMapping("/getAllBooksByName/{name}")
+    public List<Book> getAllBooksByName(@PathVariable String name){
+        return bookService.getAllBooksByName(name);
+    }
 }

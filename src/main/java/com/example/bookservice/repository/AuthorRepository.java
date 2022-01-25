@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Date;
 import java.util.List;
 
+import static org.hibernate.loader.Loader.SELECT;
+
 
 public interface AuthorRepository extends JpaRepository<Author, Long> {
     List<Author> findAllByFirstName(String name);

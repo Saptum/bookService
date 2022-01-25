@@ -17,6 +17,6 @@ spring:
     generate-ddl: true
 # Server configuration
 server:
-  port: 8080 #set your port
+  port: 8081 #set your port
 servlet:
   context-path: /v1

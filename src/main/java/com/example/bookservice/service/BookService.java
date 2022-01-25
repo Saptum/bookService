@@ -76,4 +76,8 @@ public class BookService {
         book.assignPublisher(publisher);
         return bookRepository.save(book);
     }
+
+    public  List<Book> getAllBooksByName(String name){
+        return bookRepository.findAllBooksByName(name);
+    }
 }
