@@ -80,4 +80,14 @@ public class AuthorController {
     public String deleteAuthor(@PathVariable Long id) {
         return authorService.deleteAuthor(id);
     }
+
+    @GetMapping("/author/country/{id}")
+    public String  getAuthorAndCountryById(@PathVariable Long id){
+        return authorService.getAuthorAndCountryById(id);
+    }
+
+    @GetMapping("/authorByEmaill/{email}")
+    public Author getAuthorByEmail(@PathVariable String email){
+        return  authorService.getAuthorByEmail(email);
+    }
 }

@@ -24,5 +24,8 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
     @Query("select a from Author a where a.email = ?1")
     Author findByEmail(String email);
 
+    @Query (value = "SELECT a.firstName, a.lastName, a.country" +
+            " FROM Author a WHERE a.authorId = ?1")
+    String findAuthorAndCountryById ( Long id);
 
 }

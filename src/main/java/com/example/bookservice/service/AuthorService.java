@@ -45,8 +45,8 @@ public class AuthorService {
         return authorRepository.findAllByLastName(lastName);
     }
 
-    public List<Author> getAuthorsByFirstNameAndLastName(String firstName, String lastName){
-        return authorRepository.findByFirstNameAndLastName(firstName,lastName);
+    public List<Author> getAuthorsByFirstNameAndLastName(String firstName, String lastName) {
+        return authorRepository.findByFirstNameAndLastName(firstName, lastName);
     }
 
     public List<Author> getAuthorsByCountry(String country) {
@@ -76,4 +76,11 @@ public class AuthorService {
         return "Author " + id + " was deleted!";
     }
 
+    public String getAuthorAndCountryById(Long id) {
+        return authorRepository.findAuthorAndCountryById(id);
+    }
+
+    public Author getAuthorByEmail(String email){
+        return authorRepository.findByEmail(email);
+    }
 }
