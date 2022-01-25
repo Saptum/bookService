@@ -4,7 +4,6 @@ import com.example.bookservice.model.Author;
 import com.example.bookservice.model.Reward;
 import com.example.bookservice.repository.AuthorRepository;
 import com.example.bookservice.repository.RewardRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,10 +11,14 @@ import java.util.List;
 @Service
 public class RewardService {
 
-    @Autowired
-    private RewardRepository rewardRepository;
-    @Autowired
-    private AuthorRepository authorRepository;
+
+    private final RewardRepository rewardRepository;
+    private  final AuthorRepository authorRepository;
+
+    public RewardService(RewardRepository rewardRepository, AuthorRepository authorRepository) {
+        this.rewardRepository = rewardRepository;
+        this.authorRepository = authorRepository;
+    }
 
 
     public Reward saveReward(Reward reward) {
